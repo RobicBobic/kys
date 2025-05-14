@@ -513,7 +513,7 @@ const InfiniteBonkConsole = () => {
                       <span className="text-orange-300/70">{conversation.views}</span>
                     </div>
                   </div>
-                  <a href="#" onClick={(e) => { e.preventDefault(); handleConversationClick(conversation); }} className="text-orange-500 hover:text-orange-300 hover:underline flex items-center">
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onClick={(e) => { e.preventDefault(); handleConversationClick(conversation); }} className="text-orange-500 hover:text-orange-300 hover:underline flex items-center">
                     <FileText size={12} className="mr-1 inline" />
                     {conversation.title}
                   </a>
@@ -532,7 +532,7 @@ const InfiniteBonkConsole = () => {
                 })}
               >
                 <span className="text-orange-300/90 mr-2">∆ 13468</span>
-                <a href="#" onClick={(e) => e.preventDefault()} className="text-orange-500 hover:text-orange-300 hover:underline flex items-center">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onClick={(e) => e.preventDefault()} className="text-orange-500 hover:text-orange-300 hover:underline flex items-center">
                   <FileText size={12} className="mr-1 inline" />
                   conversation_1712183367.txt
                 </a>
