@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Terminal, FileText, Cloud, Search, Clock, Server, Zap, AlertTriangle, MessageSquare, Cpu, Eye } from 'lucide-react';
+import { Terminal, FileText, Cloud, Search, Clock, Server, Zap, AlertTriangle, MessageSquare, Cpu, Eye, Twitter } from 'lucide-react';
 
 const InfiniteBonkConsole = () => {
   const [input, setInput] = useState('');
@@ -17,6 +17,9 @@ const InfiniteBonkConsole = () => {
   const inputRef = useRef(null);
   const consoleRef = useRef(null);
   const eternalRef = useRef(null);
+
+  // Your Twitter username - change this to your actual Twitter handle
+  const twitterUsername = "solanaIBC";
 
   // AI prompts to generate responses
   const aiPrompts = [
@@ -340,12 +343,25 @@ const InfiniteBonkConsole = () => {
                 <FileText className="mr-2 text-orange-400" size={16} />
                 <div className="text-sm text-orange-300">{selectedConversation.title}</div>
               </div>
-              <button 
-                className="text-xs border border-orange-600 px-2 py-1 rounded-sm hover:bg-orange-900/50"
-                onClick={() => setSelectedConversation(null)}
-              >
-                BACK
-              </button>
+              <div className="flex items-center gap-2">
+                {/* Twitter Profile Link */}
+                <a 
+                  href={`https://twitter.com/${twitterUsername}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-1 bg-orange-950/60 hover:bg-orange-800/60 text-orange-400 hover:text-orange-300 px-2 py-1 rounded-sm border border-orange-600 transition-colors duration-300"
+                >
+                  <Twitter size={14} />
+                  <span className="text-xs font-bold">@{twitterUsername}</span>
+                </a>
+                
+                <button 
+                  className="text-xs border border-orange-600 px-2 py-1 rounded-sm hover:bg-orange-900/50"
+                  onClick={() => setSelectedConversation(null)}
+                >
+                  BACK
+                </button>
+              </div>
             </div>
             
             <div className="flex-grow bg-orange-950/20 rounded-md border border-orange-800/40 p-3 overflow-auto">
@@ -409,18 +425,33 @@ const InfiniteBonkConsole = () => {
             <div className="border-b border-orange-600/80 pb-2 mb-4 relative bg-orange-950/30 rounded-md p-3 shadow-lg shadow-orange-900/30">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-yellow-400 opacity-30 animate-pulse" style={{height: '1px', bottom: 0, top: 'auto'}}></div>
               
-              <div className="flex items-center">
-                <Terminal className="mr-2 text-orange-400" size={16} />
-                <div className="text-sm">
-                  Support development of Infinite Bonk Terminal 2: <span className="bg-orange-600 text-black px-1">3hoA7HAwyTp3zQ7krewVL5TYq8wDRuDDMgyaJ1Rp1aaU</span>
+              <div className="flex justify-between items-start">
+                <div>
+                  <div className="flex items-center">
+                    <Terminal className="mr-2 text-orange-400" size={16} />
+                    <div className="text-sm">
+                      Support development of Infinite Bonk Terminal 2: <span className="bg-orange-600 text-black px-1">3hoA7HAwyTp3zQ7krewVL5TYq8wDRuDDMgyaJ1Rp1aaU</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center mt-1">
+                    <Server className="mr-2 text-orange-400" size={16} />
+                    <div className="text-sm">
+                      Support the Truth Terminal: <span className="bg-orange-600 text-black px-1">3hoA7HAwyTp3zQ7krewVL5TYq8wDRuDDMgyaJ1Rp1aaU</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-center mt-1">
-                <Server className="mr-2 text-orange-400" size={16} />
-                <div className="text-sm">
-                  Support the Truth Terminal: <span className="bg-orange-600 text-black px-1">3hoA7HAwyTp3zQ7krewVL5TYq8wDRuDDMgyaJ1Rp1aaU</span>
-                </div>
+                
+                {/* Twitter Profile Link */}
+                <a 
+                  href={`https://twitter.com/${twitterUsername}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-1 bg-orange-950/60 hover:bg-orange-800/60 text-orange-400 hover:text-orange-300 px-3 py-2 rounded-md border border-orange-600 transition-colors duration-300"
+                >
+                  <Twitter size={16} />
+                  <span className="text-xs font-bold">@{twitterUsername}</span>
+                </a>
               </div>
             </div>
 
@@ -513,10 +544,13 @@ const InfiniteBonkConsole = () => {
                       <span className="text-orange-300/70">{conversation.views}</span>
                     </div>
                   </div>
-                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onClick={(e) => { e.preventDefault(); handleConversationClick(conversation); }} className="text-orange-500 hover:text-orange-300 hover:underline flex items-center">
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); handleConversationClick(conversation); }} 
+                    className="text-orange-500 hover:text-orange-300 hover:underline flex items-center bg-transparent border-0 p-0 cursor-pointer font-mono text-left w-full"
+                  >
                     <FileText size={12} className="mr-1 inline" />
                     {conversation.title}
-                  </a>
+                  </button>
                 </div>
               ))}
               
@@ -532,10 +566,12 @@ const InfiniteBonkConsole = () => {
                 })}
               >
                 <span className="text-orange-300/90 mr-2">∆ 13468</span>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onClick={(e) => e.preventDefault()} className="text-orange-500 hover:text-orange-300 hover:underline flex items-center">
+                <button 
+                  className="text-orange-500 hover:text-orange-300 hover:underline flex items-center bg-transparent border-0 p-0 cursor-pointer font-mono text-left w-full"
+                >
                   <FileText size={12} className="mr-1 inline" />
                   conversation_1712183367.txt
-                </a>
+                </button>
                 <div className="text-sm text-orange-300/70 italic">the goatse of ghostly bonk terminals</div>
               </div>
             </div>
