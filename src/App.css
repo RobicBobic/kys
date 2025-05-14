@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: #ff8c00;
+  font-family: monospace;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.terminal {
+  background-color: black;
+  color: #ff8c00;
+  padding: 10px;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+/* Header styles */
+.header {
+  margin-bottom: 15px;
+}
+
+.header-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.prompt {
+  color: #ff8c00;
+  margin-right: 8px;
+}
+
+.highlight {
+  background-color: #ff8c00;
+  color: black;
+  padding: 0 5px;
+}
+
+.status {
+  color: #ff8c00;
+  margin-top: 5px;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ff8c00;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.search-icon {
+  margin-right: 5px;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  color: #ff8c00;
+  width: 100%;
+  outline: none;
+  font-family: monospace;
+}
+
+.search-input::placeholder {
+  color: #ff8c00;
+  opacity: 0.7;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: #ff8c00;
+  margin-left: 2px;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+.cursor.hidden {
+  opacity: 0;
+}
+
+/* Screensaver button */
+.screensaver-button {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #ff8c00;
+  color: #ff8c00;
+  padding: 5px;
+  text-align: center;
+  font-family: monospace;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Sort section */
+.sort-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  margin-right: 10px;
+  color: #ff8c00;
+}
+
+.sort-button {
+  background-color: transparent;
+  border: 1px solid #ff8c00;
+  color: #ff8c00;
+  padding: 2px 5px;
+  margin-right: 5px;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+.sort-button.active {
+  background-color: #ff8c00;
+  color: black;
+}
+
+/* Scenario section */
+.scenario-section {
+  margin-bottom: 10px;
+}
+
+.scenario-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.scenario-button {
+  background-color: transparent;
+  border: 1px solid #ff8c00;
+  color: #ff8c00;
+  padding: 2px 5px;
+  margin: 2px;
+  font-family: monospace;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Conversation list */
+.conversation-list {
+  margin-top: 15px;
+}
+
+.conversation-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.conversation-left {
+  display: flex;
+}
+
+.delta {
+  color: #ff8c00;
+  margin-right: 5px;
+}
+
+.conversation-link {
+  background: none;
+  border: none;
+  color: #0066ff;
+  font-family: monospace;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ai-strength {
+  color: #ff8c00;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: #ff8c00;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* Buttons */
+button {
+  outline: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
